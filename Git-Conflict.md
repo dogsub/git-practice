@@ -13,13 +13,13 @@ git commit -m "hotfix my solution"
 
 → 로컬이 원격 저장소(Remote Repository)보다 한 단계 앞선 상태
 
----
+
 
 ## 2️⃣ 다른 사용자가 GitHub 웹에서 파일(`edition.txt`) 직접 수정
 
 → 원격 저장소(Remote Repository)는 로컬의 커밋이 아직 적용 X
 
----
+
 
 ## 3️⃣ 로컬에서의 푸시 실패 (non-fast-forward)
 
@@ -44,7 +44,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
   → 로컬 `main`이 원격 `main`보다 **뒤처진 상태**
   → 즉, 서로 다른 커밋을 가진 “분기(diverged)” 상태 발생
 
----
+
 
 ## 4️⃣ 원격 변경 가져오기 (fetch)
 
@@ -55,7 +55,7 @@ git fetch origin
 * 원격의 새 커밋(`82e42de`)을 받아서 **`origin/main` 포인터 갱신**
 * 아직 로컬 `main`에는 병합되지 않음 (즉, 작업 트리는 그대로)
 
----
+
 
 ## 5️⃣ 병합 시도 및 충돌 발생
 
@@ -73,7 +73,7 @@ git merge origin/main
   → **edition.txt 파일을 로컬과 원격에서 모두 수정했음**
   → Git이 자동 병합 실패 → 수동 충돌 해결 필요
 
----
+
 
 ## 6️⃣ 충돌 해결 및 커밋
 
@@ -117,7 +117,7 @@ git merge origin/main
 
 * 웹에서 `edition.txt`를 또 수정했다고 가정
 
----
+
 
 ## 2️⃣ 로컬 저장소 동기화
 
