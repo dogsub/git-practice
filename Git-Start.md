@@ -1,13 +1,18 @@
 # GitHub Repository 생성 후 작업 준비까지
 
 // Git 관리 시작
+```
 git init
+```
 
 // Git 레포 작업 전 미리 .gitignore 파일 작성
+
 nano .gitignore
 
 // .gitignore 파일 스테이징 및 커밋
+
 git add .gitignore
+
 git commit -m "Initialize project with .gitignore"
 
 // 메인 브랜치명 설정
