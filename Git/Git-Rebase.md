@@ -38,13 +38,13 @@
 ```bash
 git fetch origin
 git rebase origin/main
-
+```
 
 ⸻
 
-rebase 전후 개념
+### rebase 전후 개념
 
-rebase 전
+[rebase 전]
 
 main:    --- A(apple) --- B(bear)
 branch:  --- X(dongseob)
@@ -53,7 +53,8 @@ branch:  --- X(dongseob)
 	•	내 브랜치에는 dongseob/ 관련 작업 X가 있음
 	•	아직 내 작업은 main에 합쳐지지 않음
 
-rebase 후
+
+[rebase 후]
 
 main:    --- A(apple) --- B(bear)
 branch:  ----------------------- X'(dongseob)
@@ -67,23 +68,13 @@ branch:  ----------------------- X'(dongseob)
 
 ⸻
 
-중요한 전제
-
-이 방법은 내 작업이 아직 main에 머지되지 않은 개인 작업 브랜치일 때 가장 자연스럽다.
-
-즉, 아래 조건일 때 사용한다.
-	•	내 작업은 아직 작업 브랜치에만 있다
-	•	다른 사람 작업은 이미 main에 머지되었다
-	•	나는 내 작업을 유지하면서 main의 최신 상태를 반영하고 싶다
-
-⸻
-
-이미 내 작업도 main에 머지된 경우
+### 이미 내 작업도 main에 머지된 경우
 
 만약 내 작업도 이미 main에 머지된 상태라면, 굳이 rebase할 필요는 없다.
 
 그 경우에는 그냥 main만 최신화하면 된다.
 
-```
+```bash
 git switch main
 git pull origin main
+```
