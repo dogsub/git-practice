@@ -84,6 +84,6 @@ branch:  ----------------------- X'(dongseob)
 
 그 경우에는 그냥 main만 최신화하면 된다.
 
-```bash
+```
 git switch main
 git pull origin main
