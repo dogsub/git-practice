@@ -1,7 +1,5 @@
 # CLI Commands 2
 
----
-
 ## [입출력 리다이렉션 (I/O Redirection)]
 
 ### 표준 출력 (stdout)
@@ -56,9 +54,22 @@
 - `history > file.txt` : 명령어 기록 저장
 
 ## [네트워크 관련 명령어]
+- `w` : 현재 서버에 접속한 유저 출력
+  - USER : 계정
+  - TTY : tty(콘솔 접속), pts(터미널 접속) + 뒤 숫자(몇 번째 터미널로 접속했는지)
+  - FROM : 접속자의 IP
+  - LOGIN@ : 로그인한 시간
+  - IDLE : 지연시간
+  - JCPU : CPU 지연시간
+  - WHAT : 접속자가 현재 어떤 명령을 사용하고 있는지
+- `mesg` : 리눅스 내 메세지 관련(mesg y_허용 / mesg n_거절)
+- `write 유저명 TTY` : 해당 유저에게 메세지 전송 (ex. write guest pts/3)
+- `wall 메시지` : 모든 유저에게 메세지 전송 (ex. wall -> 곧 서버점검으로 종료 -> Ctrl + D로 종료)
 
 - `wget [URL]` : 인터넷에서 파일 다운로드
 - `curl [옵션] [URL]` : 데이터 전송 (다운로드, 업로드, API 호출 등)
+
+- `ifconfig/ipconfig` : 각각 리눅스/윈도우 계열에서의 네트워크 확인
 
 ## [grep (문자열 검색)]
 
