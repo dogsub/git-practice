@@ -1,86 +1,57 @@
-# GitHub Repository 생성 후 작업 준비까지
+# GitHub 저장소 작업 시작하기
 
-* Git 관리 시작
-```
-git init
-```
+아래 URL의 `YOUR_NAME`, `YOUR_REPOSITORY`는 실제 값으로 바꾼다. `${새 레포 주소.git}`는 올바른 셸 자리표시자가 아니므로 사용하지 않는다.
 
+## 1. 새로운 프로젝트를 새 GitHub 저장소에 올리기
 
-* Git 레포 작업 전 미리 .gitignore 파일 작성
-```
+```bash
+git init -b main
+
+# 필요한 경우 이 저장소의 커밋 작성자 설정
+git config user.name "Your Name"
+git config user.email "you@example.com"
+
+# 프로젝트에 맞춰 무시 규칙 작성
 nano .gitignore
-```
 
-
-* .gitignore 파일 스테이징 및 커밋
-```
 git add .gitignore
 git commit -m "Initialize project with .gitignore"
-```
 
-
-* 메인 브랜치명 설정
-```
-git branch -M main
-```
-
-
-* 원격 저장소 연결
-```
-git remote add origin ${새 레포 주소.git}
-```
-
-
-* 원격 저장소로 첫 푸시
-```
-git push -u origin main
-```
-
----
-
-# 기존 프로젝트 Develop하기 위한 GitHub Repository 생성 후 작업 준비까지
-
-* 기존 프로젝트 클론
-```
-git clone ${기존 레포 주소}
-cd {프로젝트 폴더}
-```
-
-
-* 기존 원격 확인 및 제거
-```
-git remote -v       # 기존 origin 주소 확인
-git remote remove origin
-```
-
-
-* 만약 이전의 git comiit 이력을 모두 지우고 싶다면
-```
-.git 폴더 삭제
-git init 
-```
-
-
-* 커밋
-```
-git add .
-git commit -m "Initialize project"
-```
-
-
-* 새 원격 저장소 생성 후 연결
-```
-git remote add origin ${새 레포 주소.git}
-```
-
-
-* 푸시
-```
+git remote add origin https://github.com/YOUR_NAME/YOUR_REPOSITORY.git
 git push -u origin main
 ```
 
 
-* 메인 브랜치명 설정
+## 2. 기존 프로젝트를 새 저장소[레포]로 옮기기 with 커밋 유지
+
+```bash
+git clone https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git my-project
+cd my-project
+
+# 현재 브랜치 확인 후 만약 메인 브랜치가 아니라면 main으로
+git branch
+git switch main
+
+# 원본 연결 유지
+git remote rename origin upstream
+
+# 새 저장소 연결
+git remote add origin https://github.com/YOUR_NAME/YOUR_NEW_REPOSITORY.git
+
+# 원본 커밋 이력 유지
+git push -u origin main
 ```
-git branch -M main
+
+
+## 3. 기존 프로젝트를 새 저장소[레포]로 옮기기 with 원본 연결 해제 & 커밋 유지 X
+
+```bash
+git clone https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git original-project
+
+# .git을 제외하고 새로운 my-project 폴더로 복사
+rsync -av --exclude='.git' original-project/ my-project/
+mkdir my-project
+cd my-project
+
+# 이후 "1. 새로운 프로젝트를 새 GitHub 저장소에 올리기"와 동일하게 진행
 ```
