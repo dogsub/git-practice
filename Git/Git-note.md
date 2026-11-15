@@ -42,6 +42,7 @@
 | **무시 목록 설정** | `.gitignore` | Git이 추적하지 않을 파일 및 폴더를 지정합니다. |
 | **커밋** | `git commit -m "메시지"` | Staging area의 변경사항을 저장소에 기록합니다. |
 | **브랜치 이름 변경**| `git branch -m [새이름]`| 현재 브랜치의 이름을 변경합니다. |
+| **마지막 커밋 버전으로 롤백** | `git reset hard` | 마지막 커밋 버전으로 롤백합니다. |
 | **커밋만 취소** | `git reset --soft HEAD~1` | **--soft**: 커밋만 취소하고 변경 내용은 Staging area에 유지합니다. |
 | **커밋, 스테이징 취소**| `git reset --mixed HEAD~1`| **--mixed**: 커밋과 스테이징을 모두 취소하고 변경 내용은 Working Directory에 유지합니다. |
 | **모든 변경사항 취소**| `git reset --hard HEAD~1` | **--hard**: 파일 수정, 스테이징, 커밋을 모두 취소하고 이전 커밋 상태로 완전히 되돌립니다. |
